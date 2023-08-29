@@ -20,7 +20,7 @@ const Root = styled.div`
   justify-content: flex-start;
   flex-shrink: 0;
 
-//   border: 10px solid #574ef1;
+  //   border: 10px solid #574ef1;
   border: 10px solid #ce4c6c;
   background: rgba(87, 78, 241, 0.2);
 `;
@@ -44,7 +44,7 @@ function App() {
         <Root>
             <Header>
                 {/* <Text style={{flex: 1, minWidth: "fit-content"}}>📍NYC / Amsterdam / London</Text> */}
-                <Text style={{flex: 1}}>Jeremy Paton</Text>
+                <Text>Jeremy Paton</Text>
                 {/* <Text style={{flex: 1}}>@jchangsta</Text> */}
             </Header>
             {/* <Body>
