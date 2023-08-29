@@ -20,8 +20,9 @@ const Root = styled.div`
   justify-content: flex-start;
   flex-shrink: 0;
 
-  border: 10px solid #574EF1;
-  background: rgba(87, 78, 241, 0.20);
+//   border: 10px solid #574ef1;
+  border: 10px solid #ce4c6c;
+  background: rgba(87, 78, 241, 0.2);
 `;
 
 const Body = styled.div`
@@ -42,11 +43,11 @@ function App() {
     return (
         <Root>
             <Header>
-                <Text style={{flex: 1, minWidth: "fit-content"}}>📍NYC / Amsterdam / London</Text>
-                <Text style={{flex: 1}}>Jess 美 Chang</Text>
-                <Text style={{flex: 1}}>@jchangsta</Text>
+                {/* <Text style={{flex: 1, minWidth: "fit-content"}}>📍NYC / Amsterdam / London</Text> */}
+                <Text style={{flex: 1}}>Jeremy Paton</Text>
+                {/* <Text style={{flex: 1}}>@jchangsta</Text> */}
             </Header>
-            <Body>
+            {/* <Body>
                 <Column style={{flex: 1}} mainAxisSize="stretch" crossAxisSize="max">
                     <Window title="About me" background={background0}>
                         <Text>3 playful speculative objects, happy accidents, geometric patterns, grid systems, learning
@@ -94,7 +95,7 @@ function App() {
 
                 </Column>
 
-            </Body>
+            </Body> */}
         </Root>
     );
 }
