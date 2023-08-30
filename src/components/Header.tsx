@@ -5,7 +5,7 @@ export const Header = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 0 240px;
+  padding: 0 24px;
   width: 100%;
   min-width: fit-content;
   height: 80px;

@@ -1,69 +1,81 @@
 import styled from "@emotion/styled";
-import React, {PropsWithChildren} from "react";
-import {Row} from "./Flex";
-import {Header} from "./Header";
-import crossIcon from "../assets/icons/CloseIcon.svg"
-import hideIcon from "../assets/icons/HideIcon.svg"
-import expandIcon from "../assets/icons/ExpandIcon.svg"
-import {Text} from "./Text";
+import React, { PropsWithChildren } from "react";
+import { Row } from "./Flex";
+import { Header } from "./Header";
+import crossIcon from "../assets/icons/CloseIcon.svg";
+import hideIcon from "../assets/icons/HideIcon.svg";
+import expandIcon from "../assets/icons/ExpandIcon.svg";
+import { Text } from "./Text";
 
 const Icon = styled.div`
   width: 32px;
   height: 32px;
   margin-right: 12px;
-`
+`;
 
 const CrossIcon = styled(Icon)`
   background: url(${crossIcon}) center no-repeat;
-`
+`;
 const HideIcon = styled(Icon)`
   background: url(${hideIcon}) center no-repeat;
-`
+`;
 const ExpandIcon = styled(Icon)`
   background: url(${expandIcon}) center no-repeat;
-`
+`;
 
 interface IProps extends PropsWithChildren {
-    title?: string
-    background?: string
-    align?: "row" | 'column'
-    style?: React.CSSProperties
-    bodyStyle?: React.CSSProperties
+  title?: string;
+  background?: string;
+  align?: "row" | "column";
+  style?: React.CSSProperties;
+  bodyStyle?: React.CSSProperties;
+  withoutHeader?: boolean;
 }
 
 const Root = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
-  border: 10px solid #574EF1;
+  border: 10px solid #574ef1;
   box-sizing: border-box;
 `;
 
 const Body = styled.div<{ background?: string }>`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 16px;
   height: 100%;
   box-sizing: border-box;
 
-  ${({background}) => background ? `background: url(${background}), repeat` : ""};
-`
+  ${({ background }) =>
+    background ? `background: url(${background}), repeat` : ""};
+`;
 
-
-const Window: React.FC<IProps> = ({title = "", children, background, bodyStyle, ...rest}) => {
-    return <Root {...rest}>
+const Window: React.FC<IProps> = ({
+  title = "",
+  children,
+  background,
+  bodyStyle,
+  withoutHeader = true,
+  ...rest
+}) => {
+  return (
+    <Root {...rest}>
+      {!withoutHeader &&
         <Header>
-            <Row>
-                <CrossIcon/>
-                <HideIcon/>
-                <ExpandIcon/>
-            </Row>
-            <Text style={{whiteSpace: 'nowrap'}}>{title}</Text>
+          <Row>
+            <CrossIcon />
+            <HideIcon />
+            <ExpandIcon />
+          </Row>
+          <Text style={{ whiteSpace: "nowrap" }}>{title}</Text>
         </Header>
-        <Body background={background} style={bodyStyle}>
-            {children}
-        </Body>
-    </Root>;
-}
+      }
+      <Body background={background} style={bodyStyle}>
+        {children}
+      </Body>
+    </Root>
+  );
+};
 
 export default Window;
