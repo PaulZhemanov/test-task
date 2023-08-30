@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Text = styled.div`
-  // color: #574ef1;
-  color: #ce4c6c;
+  color: #574ef1;
 
   height: fit-content;
 

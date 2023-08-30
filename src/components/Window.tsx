@@ -34,7 +34,7 @@ interface IProps extends PropsWithChildren {
 
 const Root = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   border: 10px solid #574ef1;
   box-sizing: border-box;
@@ -56,13 +56,13 @@ const Window: React.FC<IProps> = ({
   children,
   background,
   bodyStyle,
-  withoutHeader = true,
+  withoutHeader = false,
   ...rest
 }) => {
   return (
     <Root {...rest}>
       {!withoutHeader &&
-        <Header>
+        <Header style={{ borderColor: '#574EF1' }}>
           <Row>
             <CrossIcon />
             <HideIcon />

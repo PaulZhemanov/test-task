@@ -4,11 +4,14 @@ import { Text } from "./components/Text";
 import { Header } from "./components/Header";
 import Window from "./components/Window";
 import SizedBox from "./components/SizedBox";
-import background1 from "./assets/images/4.png";
-import { Column, Row } from "./components/Flex";
-import { Tag } from "./components/Tag";
-import Rectangle from "./components/rectangle";
+import { Row } from "./components/Flex";
+import dog from "./assets/images/dog.svg";
 
+const DogIcon = styled.div`
+  background: url(${dog}) center no-repeat;
+  height: 500px;
+  width: 100%;
+`;
 const Root = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,7 +32,8 @@ const Body = styled.div`
   display: flex;
   align-items: stretch;
   justify-content: stretch;
-  width: 100%;
+  flex-direction: column;
+  /* width: 100%; */
   max-height: 1024px;
   height: 100%;
   padding: 18px;
@@ -41,52 +45,43 @@ function App() {
   return (
     <Root>
       <Header>
-        <Text>Jeremy Paton</Text>
+        <Text style={{ color: '#CE4C6C' }}>Jeremy Paton</Text>
       </Header>
-      <Body style={{ flexDirection: "column" }}>
-        <Row
-          style={{
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-            marginBottom: "100px",
-          }}
-          mainAxisSize="stretch"
-          crossAxisSize="max"
-        >
+      <Body>
+        <Row mainAxisSize="stretch" crossAxisSize="max">
           <Window
-            style={{
-              width: "500px",
-              height: "500px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+            style={{ width: "500px", height: "500px" }}
+            bodyStyle={{ justifyContent: "center", alignItems: "center", width: "100%" }}
+            withoutHeader
           >
             <Text>Animation</Text>
           </Window>
-          <div>
-            <Rectangle /> {/* Используем компонент Rectangle здесь */}
-          </div>
+          <SizedBox width={24} />
+          <DogIcon /> {/* Используем компонент Rectangle здесь */}
         </Row>
+        <SizedBox height={24} />
         <Row
           style={{ justifyContent: "center", alignItems: "center" }}
-          mainAxisSize="stretch"
+          // mainAxisSize="stretch"
           crossAxisSize="max"
         >
-          <Window style={{ width: "265px", height: "360px" }}>
+          <Window style={{ height: "360px" }} bodyStyle={{ justifyContent: "center", alignItems: "center", width: "100%" }}>
             <Text>Beauty</Text>
           </Window>
-          <Window style={{ width: "265px", height: "360px" }}>
+          <SizedBox width={24} />
+          <Window style={{ height: "360px" }} bodyStyle={{ justifyContent: "center", alignItems: "center", width: "100%" }}>
             <Text>Beauty</Text>
           </Window>
-          <Window style={{ width: "265px", height: "360px" }}>
+          <SizedBox width={24} />
+          <Window style={{ height: "360px" }} bodyStyle={{ justifyContent: "center", alignItems: "center", width: "100%" }}>
             <Text>Beauty</Text>
           </Window>
-          <Window style={{ width: "265px", height: "360px" }}>
+          <SizedBox width={24} />
+          <Window style={{ height: "360px" }} bodyStyle={{ justifyContent: "center", alignItems: "center", width: "100%" }}>
             <Text>Beauty</Text>
           </Window>
-          <Window style={{ width: "265px", height: "360px" }}>
+          <SizedBox width={24} />
+          <Window style={{ height: "360px" }} bodyStyle={{ justifyContent: "center", alignItems: "center", width: "100%" }}>
             <Text>Beauty</Text>
           </Window>
         </Row>
