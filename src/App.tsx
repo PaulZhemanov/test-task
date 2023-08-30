@@ -7,6 +7,7 @@ import SizedBox from "./components/SizedBox";
 import background1 from "./assets/images/4.png";
 import { Column, Row } from "./components/Flex";
 import { Tag } from "./components/Tag";
+import Rectangle from "./components/rectangle";
 
 const Root = styled.div`
   display: flex;
@@ -53,18 +54,20 @@ function App() {
           mainAxisSize="stretch"
           crossAxisSize="max"
         >
-            <Window
-              style={{
-                width: "500px",
-                height: "500px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Text>Animation</Text>
-            </Window>
-            <img src={require("./assets/images/picture.png")} />
+          <Window
+            style={{
+              width: "500px",
+              height: "500px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text>Animation</Text>
+          </Window>
+          <div>
+            <Rectangle /> {/* Используем компонент Rectangle здесь */}
+          </div>
         </Row>
         <Row
           style={{ justifyContent: "center", alignItems: "center" }}
