@@ -50,7 +50,7 @@ const Body = styled.div<{ background?: string }>`
 `
 
 
-const Window: React.FC<IProps> = ({title = "", children, background, bodyStyle, ...rest}) => {
+const Window: React.FC<IProps> = ({ title = "", children, background, bodyStyle, ...rest }) => {
     return <Root {...rest}>
         <Header>
             <Row>
